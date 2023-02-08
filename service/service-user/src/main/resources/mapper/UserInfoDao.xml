@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.dao.UserInfoDao">
+    <sql id="columns">
+        select id, phone, password, nick_name, status, create_time, update_time, is_deleted
+        from user_info
+    </sql>
+
+    <select id="getByPhone" resultType="userInfo">
+        <include refid="columns" />
+        where phone = #{phone} and is_deleted = 0
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into user_info
+        (phone, password, nick_name)
+        values (#{phone}, #{password}, #{nickName})
+    </insert>
+
+</mapper>
