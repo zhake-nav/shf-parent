@@ -16,8 +16,5 @@
         <module name="service-house" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="shf-parent" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
