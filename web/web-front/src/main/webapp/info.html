@@ -429,7 +429,7 @@
                 },
                 login() {
                     let userInfoString = window.localStorage.getItem("userInfo")
-                    if(userInfoString != null && userInfoString != '') {
+                    if(userInfoString != null && userInfoString !== '') {
                         this.userInfo = JSON.parse(userInfoString)
                     }
                 },
@@ -438,6 +438,17 @@
                     axios.get('/userInfo/logout').then(function (response) {
                         window.localStorage.setItem("userInfo", '')
                         window.location.href = 'index.html'
+                    });
+                },
+                follow() {
+                    var that = this
+                    axios.get('/userFollow/auth/follow/'+this.id).then(function (response) {
+                        //如果没登录，拦截器会返回208状态，跳转登录页面
+                        if (response.data.code === 208) {
+                            window.location.href = 'login.html?originUrl='+window.location.href
+                        } else {
+                            that.isFollow = true
+                        }
                     });
                 }
             }

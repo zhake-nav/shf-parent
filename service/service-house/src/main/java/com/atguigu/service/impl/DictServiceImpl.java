@@ -62,6 +62,11 @@ public class DictServiceImpl extends BaseServiceImpl<Dict> implements DictServic
     }
 
     @Override
+    public String getNameById(Long id) {
+        return dictDao.getNameById(id);
+    }
+
+    @Override
     protected BaseDao<Dict> getEntityDao() {
         return dictDao;
     }

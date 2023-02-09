@@ -1,4 +1,4 @@
-package com.atguigu.dao.impl;
+package com.atguigu.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.atguigu.base.BaseDao;
@@ -19,8 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserInfoServiceImpl extends BaseServiceImpl<UserInfo> implements UserInfoService {
     @Autowired
     private UserInfoDao userInfoDao;
-    @Override
 
+    @Override
     protected BaseDao<UserInfo> getEntityDao() {
         return userInfoDao;
     }

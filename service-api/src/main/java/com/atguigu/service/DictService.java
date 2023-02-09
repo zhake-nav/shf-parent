@@ -27,4 +27,11 @@ public interface DictService extends BaseService<Dict> {
      * @return
      */
     List<Dict> findListByDictCode(String dictCode);
+
+    /**
+     * 根据字典id获取字典名
+     * @param id
+     * @return
+     */
+    String getNameById(Long id);
 }
