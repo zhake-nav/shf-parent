@@ -1,4 +1,5 @@
 com\atguigu\service\HouseUserService.class
+com\atguigu\service\PermissionService.class
 com\atguigu\service\RoleService.class
 com\atguigu\service\HouseService.class
 com\atguigu\service\DictService.class

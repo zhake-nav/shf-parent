@@ -77,4 +77,10 @@
         order by id desc
     </select>
 
+    <select id="findRoleIdByAdminId" resultType="long">
+        select ar.id
+        from  acl_admin_role aar left join acl_role ar on aar.role_id = ar.id
+        where ar.is_deleted = 0 and aar.is_deleted = 0 and admin_id = #{adminId}
+    </select>
+
 </mapper>

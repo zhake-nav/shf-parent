@@ -3,8 +3,11 @@ package com.atguigu.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.base.BaseController;
 import com.atguigu.entity.Admin;
+import com.atguigu.entity.AdminRole;
 import com.atguigu.result.Result;
 import com.atguigu.service.AdminService;
+import com.atguigu.service.RoleService;
+import com.atguigu.util.MD5;
 import com.atguigu.util.QiniuUtil;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +35,13 @@ public class AdminController extends BaseController {
     private final static String PAGE_EDIT = "admin/edit";
     private final static String PAGE_SUCCESS = "common/successPage";
     private final static String PAGE_UPLOAD_SHOW = "admin/upload";
+    private final static String PAGE_ASSIGN_SHOW = "admin/assignShow";
 
     @Reference
     private AdminService adminService;
 
+    @Reference
+    private RoleService roleService;
     /**
      * 列表
      * @param request
@@ -71,6 +77,7 @@ public class AdminController extends BaseController {
     public String save(Admin admin) {
         //设置默认头像
         admin.setHeadUrl("http://47.93.148.192:8080/group1/M00/03/F0/rBHu8mHqbpSAU0jVAAAgiJmKg0o148.jpg");
+        admin.setPassword(MD5.encrypt(admin.getPassword()));
         adminService.insert(admin);
         return PAGE_SUCCESS;
     }
@@ -140,4 +147,31 @@ public class AdminController extends BaseController {
         return PAGE_SUCCESS;
     }
 
+    /**
+     * 根据admin-id找到这个id所对应的职务信息
+     * @param adminId
+     * @return
+     */
+    @GetMapping("/assignShow/{adminId}")
+    public String assignShow(@PathVariable Long adminId, ModelMap model) {
+        // 需要准备(角色种类)已分配职务和未分配职务，将其用一个map接受，再service.impl层实现
+        Map<String, Object> roleMap = roleService.findRoleIdByAdminId(adminId);
+
+        model.addAllAttributes(roleMap);
+        model.addAttribute("adminId", adminId);
+
+        return PAGE_ASSIGN_SHOW;
+    }
+
+    /**
+     * 获取表单的数据，将要分配的职务id，添加到该用户信息表上
+     * @param adminId 操作的用户id
+     * @param roleIds 要分配的roleIds 职务
+     * @return
+     */
+    @RequestMapping("/assignRole")
+    public String assignRole(Long adminId, Long[] roleIds) {
+        roleService.assignRoleBYAdminAndIds(adminId, roleIds);
+        return PAGE_SUCCESS;
+    }
 }

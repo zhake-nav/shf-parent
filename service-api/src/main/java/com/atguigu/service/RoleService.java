@@ -4,6 +4,7 @@ import com.atguigu.base.BaseService;
 import com.atguigu.entity.Role;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author ZhangHaoYu
@@ -17,4 +18,17 @@ public interface RoleService extends BaseService<Role> {
      */
     List<Role> findAll();
 
+    /**
+     * 根据用户id获取职位信息
+     * @param adminId
+     * @return
+     */
+    Map<String, Object> findRoleIdByAdminId(Long adminId);
+
+    /**
+     * 根据adminId 在role——admin中添加（roleIds）职务数据
+     * @param adminId
+     * @param roleIds
+     */
+    void assignRoleBYAdminAndIds(Long adminId, Long[] roleIds);
 }
