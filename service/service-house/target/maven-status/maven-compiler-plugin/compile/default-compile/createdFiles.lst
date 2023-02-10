@@ -1,9 +1,7 @@
 com\atguigu\dao\HouseImageDao.class
 com\atguigu\dao\DictDao.class
 com\atguigu\service\impl\HouseBrokerServiceImpl.class
-com\atguigu\service\impl\PermissionServiceImpl.class
 com\atguigu\service\impl\HouseUserServiceImpl.class
-com\atguigu\dao\PermissionDao.class
 com\atguigu\service\impl\HouseImageServiceImpl.class
 com\atguigu\dao\HouseUserDao.class
 com\atguigu\dao\CommunityDao.class

@@ -1,5 +1,8 @@
 D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\dao\AdminDao.java
+D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\dao\PermissionDao.java
 D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\dao\RoleDao.java
+D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\dao\RolePermissionDao.java
 D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\service\impl\AdminServiceImpl.java
 D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\dao\AdminRoleDao.java
 D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\service\impl\RoleServiceImpl.java
+D:\java\project5\shf-parent\service\service-acl\src\main\java\com\atguigu\service\impl\PermissionServiceImpl.java

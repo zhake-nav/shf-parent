@@ -4,6 +4,7 @@ import com.atguigu.base.BaseService;
 import com.atguigu.entity.Permission;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author ZhangHaoYu
@@ -16,4 +17,18 @@ public interface PermissionService extends BaseService<Permission> {
      * @return
      */
     List<Permission> findAll();
+
+    /**
+     * 找出所有的permission 并根据角色id 勾选其permission
+     * @param roleId
+     * @return
+     */
+    List<Map<String, Object>> findPermissionByRoleId(Long roleId);
+
+    /**
+     * 保存前端来的此roleId 的permissions数据
+     * @param roleId
+     * @param permissionIds
+     */
+    void savePermissionIdsByRoleId(Long roleId, Long[] permissionIds);
 }
