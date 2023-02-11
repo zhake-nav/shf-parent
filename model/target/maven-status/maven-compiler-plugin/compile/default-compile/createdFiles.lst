@@ -10,6 +10,7 @@ com\atguigu\entity\Permission.class
 com\atguigu\entity\AdminRole.class
 com\atguigu\vo\UserFollowVo.class
 com\atguigu\entity\Community.class
+com\atguigu\helper\PermissionHelper.class
 com\atguigu\entity\House.class
 com\atguigu\entity\RolePermission.class
 com\atguigu\vo\HouseQueryVo.class

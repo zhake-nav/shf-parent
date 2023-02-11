@@ -1,10 +1,12 @@
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\IndexController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\PermissionController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\HouseImageController.java
+D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\config\UserDetailServiceImpl.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\DictController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\CommunityController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\HouseBrokerController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\HouseController.java
+D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\config\MySpringSecurityConfig.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\AdminController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\HouseUserController.java
 D:\java\project5\shf-parent\web\web-admin\src\main\java\com\atguigu\controller\RoleController.java

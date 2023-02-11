@@ -21,6 +21,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
         <spring.version>5.2.7.RELEASE</spring.version>
+        <spring.security.version>5.2.7.RELEASE</spring.security.version>
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <pagehelper.version>4.1.4</pagehelper.version>
         <servlet-api.version>2.5</servlet-api.version>
@@ -138,6 +139,17 @@
                 <groupId>com.qiniu</groupId>
                 <artifactId>qiniu-java-sdk</artifactId>
                 <version>7.2.0</version>
+            </dependency>
+            <!-- spring security安全框架 -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring.security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -14,17 +14,20 @@
           <element id="module-output" name="web-admin" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.2.7.RELEASE" />
           <element id="archive" name="common-util-1.0.jar">
             <element id="module-output" name="common-util" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.2.7.RELEASE" />

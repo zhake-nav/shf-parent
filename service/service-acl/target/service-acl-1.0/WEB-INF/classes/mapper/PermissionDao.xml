@@ -12,4 +12,76 @@
         <include refid="columns" />
         where is_deleted = 0
     </select>
+
+    <select id="findAllCodeList" resultType="string">
+        select
+            code
+        from acl_permission
+        where
+            type =2
+          and is_deleted = 0
+    </select>
+
+    <select id="findCodeListByAdminId" resultType="string">
+        select ap.*
+        from acl_admin_role aar
+                 left join acl_role_permission arp on aar.role_id = arp.role_id
+                 left join acl_permission ap on arp.permission_id = ap.id
+        where
+            admin_id = #{adminId} and
+            type = 1 and
+            aar.is_deleted = 0 and
+            ap.is_deleted = 0 and
+            arp.is_deleted = 0
+    </select>
+
+    <select id="findListByAdminId" resultType="permission">
+        select distinct ap.code
+        from acl_admin_role aar
+                 left join acl_role_permission arp on aar.role_id = arp.role_id
+                 left join acl_permission ap on arp.permission_id = ap.id
+        where
+              admin_id = #{adminId} and
+              type = 2 and
+              aar.is_deleted = 0 and
+              ap.is_deleted = 0 and
+              arp.is_deleted = 0
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into acl_permission(parent_id, name, url, code, type, sort)
+        values (#{parentId}, #{name},#{url},#{code}, #{type},#{sort})
+    </insert>
+
+    <select id="getById" resultType="permission">
+        <include refid="columns" />
+        where id = #{id} and is_deleted = 0
+    </select>
+
+    <update id="update">
+        update acl_permission
+        <set>
+            <if test="parentId != null">
+                parent_Id = #{parentId},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="delete">
+        update acl_permission set is_deleted = 1
+        where id = #{id}
+    </update>
 </mapper>

@@ -13,4 +13,9 @@
         set is_deleted = 1
         where role_id = #{id}
     </update>
+
+    <insert id="insert">
+        insert into acl_role_permission(role_id, permission_id)
+        values (#{roleId}, #{permissionId})
+    </insert>
 </mapper>

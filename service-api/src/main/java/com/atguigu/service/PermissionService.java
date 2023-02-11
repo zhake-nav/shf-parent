@@ -31,4 +31,25 @@ public interface PermissionService extends BaseService<Permission> {
      * @param permissionIds
      */
     void savePermissionIdsByRoleId(Long roleId, Long[] permissionIds);
+
+    /**
+     * 根据id 实现动态菜单
+     * @param adminId
+     * @return
+     */
+    List<Permission> findMenuPermissionByAdminId(Long adminId);
+
+
+    /**
+     * 查询所有permission 并转为树形格式
+     * @return
+     */
+    List<Permission> findAllMenu();
+
+    /**
+     *  获取用户功能权限
+     * @param adminId
+     * @return
+     */
+    List<String> findCodeListByAdminId(Long adminId);
 }

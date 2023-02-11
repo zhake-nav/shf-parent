@@ -11,6 +11,7 @@ import com.atguigu.util.MD5;
 import com.atguigu.util.QiniuUtil;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,9 @@ public class AdminController extends BaseController {
 
     @Reference
     private RoleService roleService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     /**
      * 列表
      * @param request
@@ -76,8 +80,8 @@ public class AdminController extends BaseController {
     @PostMapping("/save")
     public String save(Admin admin) {
         //设置默认头像
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         admin.setHeadUrl("http://47.93.148.192:8080/group1/M00/03/F0/rBHu8mHqbpSAU0jVAAAgiJmKg0o148.jpg");
-        admin.setPassword(MD5.encrypt(admin.getPassword()));
         adminService.insert(admin);
         return PAGE_SUCCESS;
     }

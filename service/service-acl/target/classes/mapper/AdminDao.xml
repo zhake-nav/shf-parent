@@ -101,4 +101,10 @@
         <include refid="findPageWhere"/>
         order by id desc
     </select>
+
+    <select id="getByUserName" resultType="admin">
+        <include refid="columns" />
+        from acl_admin
+        where username = #{username} and is_deleted = 0
+    </select>
 </mapper>
